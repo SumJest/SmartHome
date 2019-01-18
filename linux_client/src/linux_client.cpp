@@ -29,12 +29,13 @@ int main() {
 	}
 
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(1132);
+	addr.sin_port = htons(25564);
 	addr.sin_addr.s_addr = inet_addr("192.168.1.106");
 
 	if(connect(sock,(struct sockaddr *)&addr,sizeof(addr))<0)
 	{
-		cout<<"connection error";
+		cout<<"connection error"<<endl;
+		close(sock);
 		return 2;
 	}
 

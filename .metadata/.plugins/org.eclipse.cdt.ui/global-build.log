@@ -1,4 +1,4 @@
-17:44:02 **** Incremental Build of configuration Debug for project linux_client ****
+01:05:43 **** Incremental Build of configuration Debug for project linux_client ****
 make all 
 Building file: ../src/linux_client.cpp
 Invoking: GCC C++ Compiler
@@ -10,15 +10,9 @@ Invoking: GCC C++ Linker
 g++  -o "linux_client"  ./src/linux_client.o   
 Finished building target: linux_client
  
-17:44:10 **** Incremental Build of configuration Debug for project test_server ****
+01:08:21 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
-17:46:04 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-make: Nothing to be done for 'all'.
-17:46:56 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-make: Nothing to be done for 'all'.
-22:04:09 **** Incremental Build of configuration Debug for project test_server ****
+01:11:24 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.

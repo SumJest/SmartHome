@@ -18,9 +18,12 @@
 #define SHUTDOWN_SERVER 8
 
 using namespace std;
+
 static int currentId;
 char accesss = 1;
+bool is_shutdown = false;
 int listener;
+
 
 struct Client
 {
@@ -72,6 +75,8 @@ void * newConnection(void *_params)
 		params->cl->answer[0]=CONNECTION_CLOSED;
 		send(params->cl->socket,params->cl->answer,sizeof(params->cl->answer),0);
 		delete((Params*)_params);
+		cout<<"test2"<<endl;
+		accesss=1;
 		return 0;
 	}
 	params->cl->response[0]=0;
@@ -84,7 +89,8 @@ void * newConnection(void *_params)
 			int result = recv(params->cl->socket,params->cl->response,sizeof(params->cl->response),0);
 			if(result<=0){break;}
 		}
-		if(params->cl->response[0]==WAIT_FOR_COMMAND)
+		if(is_shutdown){params->cl->answer[0]=7;}
+		else if(params->cl->response[0]==WAIT_FOR_COMMAND)
 		{
 			if(params->cl->answer[0]==0) params->cl->answer[0]=WAIT_FOR_COMMAND;
 		}
@@ -96,6 +102,7 @@ void * newConnection(void *_params)
 			int index = 2;
 			for(iter = params->clients->begin();iter!=params->clients->end();++iter)
 			{
+
 				memset(params->cl->answer+index,(*iter)->id,sizeof(int));
 				index+=sizeof(int);
 				params->cl->answer[index]=(*iter)->type;
@@ -104,20 +111,16 @@ void * newConnection(void *_params)
 		}
 		else if(params->cl->response[0]==SHUTDOWN_SERVER)
 		{
-			for(iter = params->clients->begin();iter!=params->clients->end();++iter)
-			{
-                 (*iter)->answer[0]=CONNECTION_CLOSED;
-			}
 			cout<<"Shutdowning"<<endl;
-			close(listener);
+			is_shutdown=true;
+			params->cl->answer[0]=CONNECTION_CLOSED;
 		}
 		else
 		{
 			params->cl->answer[0]=INCORRECT_COMMAND;
 		}
-
+		cout<<params->cl->id<<": "<<(int)params->cl->answer[0]<<endl;
 		send(params->cl->socket,params->cl->answer,sizeof(params->cl->answer),0);
-		if(params->cl->answer[0]==CONNECTION_CLOSED){delete((Params*)_params);break;}
 		memset(params->cl->answer,0,sizeof(params->cl->answer));
 		memset(params->cl->response,0,sizeof(params->cl->response));
 	}
@@ -128,11 +131,30 @@ void * newConnection(void *_params)
 	{
 		if((*i)->id==params->cl->id)
 		{
-			delete((*i));
 			params->clients->erase(i);
+			delete(params->cl);
+			delete((Params*)_params);
+			break;
 		}
 	}
-	return 0;
+
+	return (void *)0;
+}
+bool isDone = false;
+struct ac_params
+{
+	int socket;
+	sockaddr_in cl_addr;
+};
+void * t_accept(void * _params)
+{
+	pthread_setcanceltype(PTHREAD_CANCEL_ASYNCHRONOUS,NULL);
+	ac_params* params = (ac_params*) _params;
+	unsigned int size;
+	params->socket = accept(listener, (struct sockaddr *)(&params->cl_addr), &size);
+	accesss = 0;
+	isDone=true;
+	return (void *) 0;
 }
 int main()
 {
@@ -146,7 +168,7 @@ int main()
 		return 1;
 	}
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(1132);
+	addr.sin_port = htons(25564);
 	addr.sin_addr.s_addr = htonl(INADDR_ANY);
 	memset(&(addr.sin_zero),0,8);
 	int err = bind(listener, (struct sockaddr *)&addr,sizeof(addr));
@@ -161,34 +183,38 @@ int main()
 	vector<Client*> clients;
 	cout << "wait for connection.." << endl;
 
-	/*while(1)
-	    {
-	           	            accesss = false;
-	            while(true)
-	            {
-	                if(accesss == true)
-	                {
-	                    clients.push_back(new Client());
-	                    break;
-	                }
-	            }
-	        }*/
 	while (1)
 	{
-		pthread_t thread;
-		struct sockaddr_in c_addr;
-		unsigned int size;
+		pthread_t ac_thread;
 		cout<<"[Main]: Ready for accept"<<endl;
-		int c_sock = accept(listener, (struct sockaddr *)&c_addr, &size);
-		if(c_sock<0){break;}//&(new Params(new Client(c_sock,c_addr)))
-		Client* client = new Client(c_sock,c_addr);
-		Params* par = new Params(client,&clients);
+		struct ac_params ac_par;
+		pthread_create(&ac_thread,NULL,t_accept,(void *) &ac_par);
+		while(1)
+		{
+			if(is_shutdown)
+			{
+				pthread_cancel(ac_thread);
+				if(clients.size()==0)break;
+			}
+			else if(isDone)
+			{
+				isDone=false;
+                 break;
+			}
+		}
+		if(ac_par.socket<0||is_shutdown){break;}
+		Client* client = new Client(ac_par.socket,ac_par.cl_addr);//alloc1
+		Params* par = new Params(client,&clients);//alloc1
+		//vector<pthread_t> threads;
+		pthread_t thread;
 		pthread_create(&thread,NULL,newConnection,(void *)par);
-
-		accesss = 0;
-		while(1){if(accesss)break;}
+		//threads.push_back(thread);
+		while(1){
+			if(accesss)break;
+		}
 	}
 	cout<<"[Main]: Socket closing"<<endl;
-	close(listener);
+	cout<<close(listener)<<endl;
+
 	return 0;
 }
