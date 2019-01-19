@@ -2,21 +2,32 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="accesss" key="selection"/>
+		<item value="delete" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="delete"/>
+			<item value="new"/>
+			<item value="close(listener)"/>
+			<item value="close(listener"/>
+			<item value="shutdowning"/>
+			<item value="socket"/>
+			<item value="addr"/>
+			<item value="response[0]="/>
+			<item value="1"/>
+			<item value="answer[0]=6"/>
+			<item value="answer"/>
 			<item value="access"/>
 			<item value="accesss"/>
 			<item value="inet_"/>
 			<item value="close"/>
-			<item value="exit"/>
-			<item value="clear"/>
-			<item value="recv"/>
 		</list>
 		<list key="replacehistory">
+			<item value="sock"/>
+			<item value="WAIT_FOR_COMMAND"/>
+			<item value="SET_TYPE"/>
 			<item value="accesss"/>
 		</list>
 	</section>
@@ -24,7 +35,7 @@
 		<item value="348" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 		<item value="440" key="DIALOG_HEIGHT"/>
-		<item value="926" key="DIALOG_X_ORIGIN"/>
-		<item value="140" key="DIALOG_Y_ORIGIN"/>
+		<item value="747" key="DIALOG_X_ORIGIN"/>
+		<item value="300" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

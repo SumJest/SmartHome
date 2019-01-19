@@ -7,7 +7,10 @@
 #include <string.h>
 #include <vector>
 #include <pthread.h>
+
 #define TYPES_COUNT 5
+
+//....COMMANDS....
 #define SET_TYPE 1
 #define SUCCESSFUL_CONNECTION 2
 #define WAIT_FOR_COMMAND 3
@@ -16,16 +19,17 @@
 #define INCORRECT_COMMAND 6
 #define CONNECTION_CLOSED 7
 #define SHUTDOWN_SERVER 8
+//....COMMANDS....
 
 using namespace std;
 
 static int currentId;
 char accesss = 1;
 bool is_shutdown = false;
-int listener;
+int listener;//Socket-listener
 
 
-struct Client
+struct Client //Структура клиента
 {
 	int id;
 	int socket;
@@ -44,7 +48,7 @@ struct Client
 		type=-1;
 	}
 };
-struct Params
+struct Params //Параметры для передачи в поток
 {
 	Client* cl;
 	vector<Client*>* clients;
@@ -54,28 +58,28 @@ struct Params
 		clients=all_clients;
 	}
 };
-void * newConnection(void *_params)
+void * newConnection(void *_params) //Функция для работы с клиентом
 {
 	Params* params = (Params*)_params;
 	cout<<"New connection: "<<inet_ntoa(params->cl->cl_addr.sin_addr)<<endl;
 	recv(params->cl->socket,params->cl->response,sizeof(params->cl->response),0);
-	if(params->cl->response[0]==SET_TYPE) //Wait for type of device
+	if(params->cl->response[0]==SET_TYPE) //Wait for type of device //Если клиент хочет сообщить тип устройства
 	{
 		cout<<"Type: "<<(int)params->cl->response[1]<<endl;
-		if(params->cl->response[1]<=0||params->cl->response[1]>=TYPES_COUNT){cout<<"Ne to"<<endl;params->cl->answer[0]=6;}
-		params->cl->type=static_cast<unsigned char>(params->cl->response[1]);
-		params->clients->push_back(params->cl);
-		params->cl->answer[0]=SUCCESSFUL_CONNECTION;
+		if(params->cl->response[1]<=0||params->cl->response[1]>=TYPES_COUNT){cout<<"Ne to"<<endl;params->cl->answer[0]=6;}//Ошибка в аргументах
+		params->cl->type=static_cast<unsigned char>(params->cl->response[1]);//Присваиваем тип клиенту
+		params->clients->push_back(params->cl); //Пушим клиента в вектор всех клиентов
+		params->cl->answer[0]=SUCCESSFUL_CONNECTION; //Отвечаем клиенту, что подключение успешно
 		send(params->cl->socket,params->cl->answer,sizeof(params->cl->answer),0);
-		memset(params->cl->answer,0,sizeof(params->cl->answer));
-		accesss=1;
+		memset(params->cl->answer,0,sizeof(params->cl->answer)); // Чистим (Вообще это можно убрать, но руки не доходят)
+		accesss=1; // Разрешить подключение
 		//LOG THIS COMMAND TO FILE//
 	}else
 	{
-		params->cl->answer[0]=CONNECTION_CLOSED;
+		params->cl->answer[0]=CONNECTION_CLOSED; // Отвечаем клиенту, что соединение закрыто
 		send(params->cl->socket,params->cl->answer,sizeof(params->cl->answer),0);
-		delete((Params*)_params);
-		cout<<"test2"<<endl;
+		delete(((Params*)_params)->cl); // Освобождаем память
+		delete((Params*)_params); // Освобождаем память
 		accesss=1;
 		return 0;
 	}
@@ -84,7 +88,7 @@ void * newConnection(void *_params)
 	while(1)
 	{
 		vector<Client*>::iterator iter;
-		if(params->cl->response[0]==0)
+		if(params->cl->response[0]==0) //
 		{
 			int result = recv(params->cl->socket,params->cl->response,sizeof(params->cl->response),0);
 			if(result<=0){break;}
@@ -123,16 +127,17 @@ void * newConnection(void *_params)
 		send(params->cl->socket,params->cl->answer,sizeof(params->cl->answer),0);
 		memset(params->cl->answer,0,sizeof(params->cl->answer));
 		memset(params->cl->response,0,sizeof(params->cl->response));
-	}
+	}//asd
 
 	cout<<"Client disconnected"<<endl;
+
 	vector<Client*>::iterator i;
 	for(i = params->clients->begin();i!=params->clients->end();++i)
 	{
 		if((*i)->id==params->cl->id)
 		{
 			params->clients->erase(i);
-			delete(params->cl);
+			delete(((Params*)_params)->cl);
 			delete((Params*)_params);
 			break;
 		}
@@ -203,12 +208,10 @@ int main()
 			}
 		}
 		if(ac_par.socket<0||is_shutdown){break;}
-		Client* client = new Client(ac_par.socket,ac_par.cl_addr);//alloc1
-		Params* par = new Params(client,&clients);//alloc1
-		//vector<pthread_t> threads;
+		Client* client = new Client(ac_par.socket,ac_par.cl_addr);
+		Params* par = new Params(client,&clients);
 		pthread_t thread;
 		pthread_create(&thread,NULL,newConnection,(void *)par);
-		//threads.push_back(thread);
 		while(1){
 			if(accesss)break;
 		}

@@ -1,4 +1,4 @@
-01:05:43 **** Incremental Build of configuration Debug for project linux_client ****
+20:05:58 **** Incremental Build of configuration Debug for project linux_client ****
 make all 
 Building file: ../src/linux_client.cpp
 Invoking: GCC C++ Compiler
@@ -10,9 +10,283 @@ Invoking: GCC C++ Linker
 g++  -o "linux_client"  ./src/linux_client.o   
 Finished building target: linux_client
  
-01:08:21 **** Incremental Build of configuration Debug for project test_server ****
+20:07:09 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:07:14 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
-01:11:24 **** Incremental Build of configuration Debug for project test_server ****
+20:07:37 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:07:45 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:08:11 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+make: Nothing to be done for 'all'.
+20:08:33 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘void* t_accept(void*)’:
+../src/test_server.cpp:159:71: error: invalid cast from type ‘sockaddr_in’ to type ‘sockaddr*’
+  params->socket = accept(listener, (struct sockaddr *)(params->cl_addr), &size);
+                                                                       ^
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:08:54 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:09:50 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:10:53 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘int main()’:
+../src/test_server.cpp:196:29: error: conversion from ‘ac_params*’ to non-scalar type ‘ac_params’ requested
+   struct ac_params ac_par = new ac_params;
+                             ^~~~~~~~~~~~~
+../src/test_server.cpp:219:16: error: type ‘struct ac_params’ argument given to ‘delete’, expected pointer
+   delete(ac_par);
+                ^
+make: *** [src/test_server.o] Error 1
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:11:32 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘int main()’:
+../src/test_server.cpp:211:13: error: request for member ‘socket’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
+   if(ac_par.socket<0||is_shutdown){break;}
+             ^~~~~~
+../src/test_server.cpp:212:38: error: request for member ‘socket’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
+   Client* client = new Client(ac_par.socket,ac_par.cl_addr);
+                                      ^~~~~~
+../src/test_server.cpp:212:52: error: request for member ‘cl_addr’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
+   Client* client = new Client(ac_par.socket,ac_par.cl_addr);
+                                                    ^~~~~~~
+make: *** [src/test_server.o] Error 1
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:11:52 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:12:39 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘int main()’:
+../src/test_server.cpp:197:17: warning: ‘ac_par’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   pthread_create(&ac_thread,NULL,t_accept,(void *) ac_par);
+   ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:13:32 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:13:45 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+make: Nothing to be done for 'all'.
+20:15:38 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘void* t_accept(void*)’:
+../src/test_server.cpp:159:71: error: invalid cast from type ‘sockaddr_in’ to type ‘sockaddr*’
+  params->socket = accept(listener, (struct sockaddr *)(params->cl_addr), &size);
+                                                                       ^
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:16:45 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘int main()’:
+../src/test_server.cpp:212:61: error: no matching function for call to ‘Client::Client(int&, sockaddr_in*&)’
+   Client* client = new Client(ac_par->socket,ac_par->cl_addr);
+                                                             ^
+../src/test_server.cpp:40:2: note: candidate: Client::Client(int, sockaddr_in)
+  Client(int cl_socket,sockaddr_in client_addr)
+  ^~~~~~
+../src/test_server.cpp:40:2: note:   no known conversion for argument 2 from ‘sockaddr_in*’ to ‘sockaddr_in’
+../src/test_server.cpp:32:8: note: candidate: constexpr Client::Client(const Client&)
+ struct Client //Структура клиента
+        ^~~~~~
+../src/test_server.cpp:32:8: note:   candidate expects 1 argument, 2 provided
+../src/test_server.cpp:32:8: note: candidate: constexpr Client::Client(Client&&)
+../src/test_server.cpp:32:8: note:   candidate expects 1 argument, 2 provided
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+20:17:19 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:17:29 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+make: Nothing to be done for 'all'.
+20:21:20 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:22:36 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘void* t_accept(void*)’:
+../src/test_server.cpp:157:33: error: no matching function for call to ‘ac_params::ac_params(void*&)’
+  ac_params params = (ac_params) _params;
+                                 ^~~~~~~
+../src/test_server.cpp:149:8: note: candidate: ac_params::ac_params()
+ struct ac_params
+        ^~~~~~~~~
+../src/test_server.cpp:149:8: note:   candidate expects 0 arguments, 1 provided
+../src/test_server.cpp:149:8: note: candidate: constexpr ac_params::ac_params(const ac_params&)
+../src/test_server.cpp:149:8: note:   no known conversion for argument 1 from ‘void*’ to ‘const ac_params&’
+../src/test_server.cpp:149:8: note: candidate: constexpr ac_params::ac_params(ac_params&&)
+../src/test_server.cpp:149:8: note:   no known conversion for argument 1 from ‘void*’ to ‘ac_params&&’
+make: *** [src/test_server.o] Error 1
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+20:22:53 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp: In function ‘void* t_accept(void*)’:
+../src/test_server.cpp:157:34: error: ‘void*’ is not a pointer-to-object type
+  ac_params params = (ac_params)* _params;
+                                  ^~~~~~~
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:39:08 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+21:39:16 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+make: Nothing to be done for 'all'.
+21:48:16 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+20:54:36 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+make: Nothing to be done for 'all'.
+21:11:42 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
