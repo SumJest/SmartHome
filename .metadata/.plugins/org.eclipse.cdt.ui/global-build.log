@@ -1,4 +1,4 @@
-20:05:58 **** Incremental Build of configuration Debug for project linux_client ****
+14:23:39 **** Incremental Build of configuration Debug for project linux_client ****
 make all 
 Building file: ../src/linux_client.cpp
 Invoking: GCC C++ Compiler
@@ -10,22 +10,10 @@ Invoking: GCC C++ Linker
 g++  -o "linux_client"  ./src/linux_client.o   
 Finished building target: linux_client
  
-20:07:09 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-Building file: ../src/test_server.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-Finished building: ../src/test_server.cpp
- 
-Building target: test_server
-Invoking: GCC C++ Linker
-g++  -o "test_server"  ./src/test_server.o   -lpthread
-Finished building target: test_server
- 
-20:07:14 **** Incremental Build of configuration Debug for project test_server ****
+14:24:02 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
-20:07:37 **** Incremental Build of configuration Debug for project test_server ****
+14:26:13 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -37,7 +25,7 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:07:45 **** Incremental Build of configuration Debug for project test_server ****
+14:26:49 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -49,22 +37,22 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:08:11 **** Incremental Build of configuration Debug for project test_server ****
+14:27:05 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
-20:08:33 **** Incremental Build of configuration Debug for project test_server ****
+14:27:25 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
 ../src/test_server.cpp: In function ‘void* t_accept(void*)’:
-../src/test_server.cpp:159:71: error: invalid cast from type ‘sockaddr_in’ to type ‘sockaddr*’
-  params->socket = accept(listener, (struct sockaddr *)(params->cl_addr), &size);
-                                                                       ^
+../src/test_server.cpp:170:24: error: base operand of ‘->’ has non-pointer type ‘sockaddr_in’
+  cout<<inet_ntoa(c_addr->sin_addr)<<endl;
+                        ^~
 src/subdir.mk:18: recipe for target 'src/test_server.o' failed
 make: *** [src/test_server.o] Error 1
 "make all" terminated with exit code 2. Build might be incomplete.
-20:08:54 **** Incremental Build of configuration Debug for project test_server ****
+14:27:45 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -76,7 +64,7 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:09:50 **** Incremental Build of configuration Debug for project test_server ****
+14:28:08 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -88,44 +76,127 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:10:53 **** Incremental Build of configuration Debug for project test_server ****
+14:32:31 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:33:11 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:34:26 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:36:24 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:39:50 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:42:25 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:42:46 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:44:44 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:54:50 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
 ../src/test_server.cpp: In function ‘int main()’:
-../src/test_server.cpp:196:29: error: conversion from ‘ac_params*’ to non-scalar type ‘ac_params’ requested
-   struct ac_params ac_par = new ac_params;
-                             ^~~~~~~~~~~~~
-../src/test_server.cpp:219:16: error: type ‘struct ac_params’ argument given to ‘delete’, expected pointer
-   delete(ac_par);
-                ^
-make: *** [src/test_server.o] Error 1
-src/subdir.mk:18: recipe for target 'src/test_server.o' failed
-"make all" terminated with exit code 2. Build might be incomplete.
-20:11:32 **** Incremental Build of configuration Debug for project test_server ****
+../src/test_server.cpp:198:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < sizeof(a);i++)
+                 ~~^~~~~~~~~
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+14:55:45 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
 ../src/test_server.cpp: In function ‘int main()’:
-../src/test_server.cpp:211:13: error: request for member ‘socket’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
-   if(ac_par.socket<0||is_shutdown){break;}
-             ^~~~~~
-../src/test_server.cpp:212:38: error: request for member ‘socket’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
-   Client* client = new Client(ac_par.socket,ac_par.cl_addr);
-                                      ^~~~~~
-../src/test_server.cpp:212:52: error: request for member ‘cl_addr’ in ‘ac_par’, which is of pointer type ‘ac_params*’ (maybe you meant to use ‘->’ ?)
-   Client* client = new Client(ac_par.socket,ac_par.cl_addr);
-                                                    ^~~~~~~
-make: *** [src/test_server.o] Error 1
-src/subdir.mk:18: recipe for target 'src/test_server.o' failed
-"make all" terminated with exit code 2. Build might be incomplete.
-20:11:52 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-Building file: ../src/test_server.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+../src/test_server.cpp:198:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < sizeof(a);i++)
+                 ~~^~~~~~~~~
 Finished building: ../src/test_server.cpp
  
 Building target: test_server
@@ -133,15 +204,15 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:12:39 **** Incremental Build of configuration Debug for project test_server ****
+14:55:56 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
 ../src/test_server.cpp: In function ‘int main()’:
-../src/test_server.cpp:197:17: warning: ‘ac_par’ may be used uninitialized in this function [-Wmaybe-uninitialized]
-   pthread_create(&ac_thread,NULL,t_accept,(void *) ac_par);
-   ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/test_server.cpp:198:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < sizeof(a);i++)
+                 ~~^~~~~~~~~
 Finished building: ../src/test_server.cpp
  
 Building target: test_server
@@ -149,7 +220,7 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:13:32 **** Incremental Build of configuration Debug for project test_server ****
+14:56:54 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -161,103 +232,168 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:13:45 **** Incremental Build of configuration Debug for project test_server ****
+15:04:22 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+15:04:55 **** Incremental Build of configuration Debug for project test_server ****
+make all 
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 
+15:06:05 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 make: Nothing to be done for 'all'.
-20:15:38 **** Incremental Build of configuration Debug for project test_server ****
+21:18:40 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-../src/test_server.cpp: In function ‘void* t_accept(void*)’:
-../src/test_server.cpp:159:71: error: invalid cast from type ‘sockaddr_in’ to type ‘sockaddr*’
-  params->socket = accept(listener, (struct sockaddr *)(params->cl_addr), &size);
-                                                                       ^
+../src/test_server.cpp: In function ‘void* newConnection(void*)’:
+../src/test_server.cpp:188:24: error: no match for ‘operator=’ (operand types are ‘std::vector<unsigned char*>’ and ‘int’)
+  params->cl->answer[0]=0;
+                        ^
+In file included from /usr/include/c++/7/vector:69:0,
+                 from ../src/test_server.cpp:8:
+/usr/include/c++/7/bits/vector.tcc:179:5: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(const std::vector<_Tp, _Alloc>&) [with _Tp = unsigned char*; _Alloc = std::allocator<unsigned char*>]
+     vector<_Tp, _Alloc>::
+     ^~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/bits/vector.tcc:179:5: note:   no known conversion for argument 1 from ‘int’ to ‘const std::vector<unsigned char*>&’
+In file included from /usr/include/c++/7/vector:64:0,
+                 from ../src/test_server.cpp:8:
+/usr/include/c++/7/bits/stl_vector.h:461:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::vector<_Tp, _Alloc>&&) [with _Tp = unsigned char*; _Alloc = std::allocator<unsigned char*>]
+       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:461:7: note:   no known conversion for argument 1 from ‘int’ to ‘std::vector<unsigned char*>&&’
+/usr/include/c++/7/bits/stl_vector.h:482:7: note: candidate: std::vector<_Tp, _Alloc>& std::vector<_Tp, _Alloc>::operator=(std::initializer_list<_Tp>) [with _Tp = unsigned char*; _Alloc = std::allocator<unsigned char*>]
+       operator=(initializer_list<value_type> __l)
+       ^~~~~~~~
+/usr/include/c++/7/bits/stl_vector.h:482:7: note:   no known conversion for argument 1 from ‘int’ to ‘std::initializer_list<unsigned char*>’
+../src/test_server.cpp:237:39: error: incompatible types in assignment of ‘__gnu_cxx::__alloc_traits<std::allocator<unsigned char*> >::value_type {aka unsigned char*}’ to ‘uint8_t [256] {aka unsigned char [256]}’
+    else ans=params->cl->answer->front();
+                                       ^
 src/subdir.mk:18: recipe for target 'src/test_server.o' failed
 make: *** [src/test_server.o] Error 1
 "make all" terminated with exit code 2. Build might be incomplete.
-20:16:45 **** Incremental Build of configuration Debug for project test_server ****
+21:20:23 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-../src/test_server.cpp: In function ‘int main()’:
-../src/test_server.cpp:212:61: error: no matching function for call to ‘Client::Client(int&, sockaddr_in*&)’
-   Client* client = new Client(ac_par->socket,ac_par->cl_addr);
-                                                             ^
-../src/test_server.cpp:40:2: note: candidate: Client::Client(int, sockaddr_in)
-  Client(int cl_socket,sockaddr_in client_addr)
-  ^~~~~~
-../src/test_server.cpp:40:2: note:   no known conversion for argument 2 from ‘sockaddr_in*’ to ‘sockaddr_in’
-../src/test_server.cpp:32:8: note: candidate: constexpr Client::Client(const Client&)
- struct Client //Структура клиента
-        ^~~~~~
-../src/test_server.cpp:32:8: note:   candidate expects 1 argument, 2 provided
-../src/test_server.cpp:32:8: note: candidate: constexpr Client::Client(Client&&)
-../src/test_server.cpp:32:8: note:   candidate expects 1 argument, 2 provided
+../src/test_server.cpp: In function ‘void* newConnection(void*)’:
+../src/test_server.cpp:236:42: error: incompatible types in assignment of ‘unsigned char*’ to ‘uint8_t [256] {aka unsigned char [256]}’
+    else ans=*(params->cl->answer->begin());
+                                          ^
 src/subdir.mk:18: recipe for target 'src/test_server.o' failed
 make: *** [src/test_server.o] Error 1
 "make all" terminated with exit code 2. Build might be incomplete.
-20:17:19 **** Incremental Build of configuration Debug for project test_server ****
+21:21:14 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-Finished building: ../src/test_server.cpp
- 
-Building target: test_server
-Invoking: GCC C++ Linker
-g++  -o "test_server"  ./src/test_server.o   -lpthread
-Finished building target: test_server
- 
-20:17:29 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-make: Nothing to be done for 'all'.
-20:21:20 **** Incremental Build of configuration Debug for project test_server ****
+../src/test_server.cpp: In function ‘void* newConnection(void*)’:
+../src/test_server.cpp:236:42: error: invalid array assignment
+    else ans=*(params->cl->answer->begin());
+                                          ^
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/7/bits/allocator.h:46,
+                 from /usr/include/c++/7/string:41,
+                 from /usr/include/c++/7/bits/locale_classes.h:40,
+                 from /usr/include/c++/7/bits/ios_base.h:41,
+                 from /usr/include/c++/7/ios:42,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from ../src/test_server.cpp:1:
+/usr/include/c++/7/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = unsigned char [256]; _Args = {const unsigned char (&)[256]}; _Tp = unsigned char [256]]’:
+/usr/include/c++/7/bits/alloc_traits.h:475:4:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::construct(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*, _Args&& ...) [with _Up = unsigned char [256]; _Args = {const unsigned char (&)[256]}; _Tp = unsigned char [256]; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<unsigned char [256]>]’
+/usr/include/c++/7/bits/stl_vector.h:943:30:   required from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::value_type = unsigned char [256]]’
+../src/test_server.cpp:244:53:   required from here
+/usr/include/c++/7/ext/new_allocator.h:136:4: error: parenthesized initializer in array new [-fpermissive]
+  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/7/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::destroy(_Up*) [with _Up = unsigned char [256]; _Tp = unsigned char [256]]’:
+/usr/include/c++/7/bits/alloc_traits.h:487:4:   required from ‘static void std::allocator_traits<std::allocator<_CharT> >::destroy(std::allocator_traits<std::allocator<_CharT> >::allocator_type&, _Up*) [with _Up = unsigned char [256]; _Tp = unsigned char [256]; std::allocator_traits<std::allocator<_CharT> >::allocator_type = std::allocator<unsigned char [256]>]’
+/usr/include/c++/7/bits/vector.tcc:159:29:   required from ‘std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::_M_erase(std::vector<_Tp, _Alloc>::iterator) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = unsigned char (*)[256]]’
+/usr/include/c++/7/bits/stl_vector.h:1180:24:   required from ‘std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = unsigned char (*)[256]; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<const unsigned char (*)[256], std::vector<unsigned char [256]> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = const unsigned char (*)[256]]’
+../src/test_server.cpp:237:57:   required from here
+/usr/include/c++/7/ext/new_allocator.h:140:28: error: request for member ‘~unsigned char [256]’ in ‘* __p’, which is of non-class type ‘unsigned char [256]’
+  destroy(_Up* __p) { __p->~_Up(); }
+                      ~~~~~~^~~
+In file included from /usr/include/c++/7/bits/char_traits.h:39:0,
+                 from /usr/include/c++/7/ios:40,
+                 from /usr/include/c++/7/ostream:38,
+                 from /usr/include/c++/7/iostream:39,
+                 from ../src/test_server.cpp:1:
+/usr/include/c++/7/bits/stl_algobase.h: In instantiation of ‘static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = unsigned char [256]; bool _IsMove = true]’:
+/usr/include/c++/7/bits/stl_algobase.h:386:44:   required from ‘_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = true; _II = unsigned char (*)[256]; _OI = unsigned char (*)[256]]’
+/usr/include/c++/7/bits/stl_algobase.h:422:45:   required from ‘_OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = true; _II = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; _OI = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >]’
+/usr/include/c++/7/bits/stl_algobase.h:487:39:   required from ‘_OI std::move(_II, _II, _OI) [with _II = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; _OI = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >]’
+/usr/include/c++/7/bits/vector.tcc:157:2:   required from ‘std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::_M_erase(std::vector<_Tp, _Alloc>::iterator) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = unsigned char (*)[256]]’
+/usr/include/c++/7/bits/stl_vector.h:1180:24:   required from ‘std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::erase(std::vector<_Tp, _Alloc>::const_iterator) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = unsigned char (*)[256]; std::vector<_Tp, _Alloc>::const_iterator = __gnu_cxx::__normal_iterator<const unsigned char (*)[256], std::vector<unsigned char [256]> >; typename __gnu_cxx::__alloc_traits<typename std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type>::const_pointer = const unsigned char (*)[256]]’
+../src/test_server.cpp:237:57:   required from here
+/usr/include/c++/7/bits/stl_algobase.h:364:4: error: static assertion failed: type is not assignable
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+    static_assert( __assignable::type::value, "type is not assignable" );
+    ^~~~~~~~~~~~~
+In file included from /usr/include/c++/7/vector:62:0,
+                 from ../src/test_server.cpp:8:
+/usr/include/c++/7/bits/stl_construct.h: In instantiation of ‘void std::_Construct(_T1*, _Args&& ...) [with _T1 = unsigned char [256]; _Args = {unsigned char [256]}]’:
+/usr/include/c++/7/bits/stl_uninitialized.h:83:18:   required from ‘static _ForwardIterator std::__uninitialized_copy<_TrivialValueTypes>::__uninit_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<unsigned char (*)[256]>; _ForwardIterator = unsigned char (*)[256]; bool _TrivialValueTypes = false]’
+/usr/include/c++/7/bits/stl_uninitialized.h:134:15:   required from ‘_ForwardIterator std::uninitialized_copy(_InputIterator, _InputIterator, _ForwardIterator) [with _InputIterator = std::move_iterator<unsigned char (*)[256]>; _ForwardIterator = unsigned char (*)[256]]’
+/usr/include/c++/7/bits/stl_uninitialized.h:289:37:   required from ‘_ForwardIterator std::__uninitialized_copy_a(_InputIterator, _InputIterator, _ForwardIterator, std::allocator<_Tp>&) [with _InputIterator = std::move_iterator<unsigned char (*)[256]>; _ForwardIterator = unsigned char (*)[256]; _Tp = unsigned char [256]]’
+/usr/include/c++/7/bits/stl_uninitialized.h:311:2:   required from ‘_ForwardIterator std::__uninitialized_move_if_noexcept_a(_InputIterator, _InputIterator, _ForwardIterator, _Allocator&) [with _InputIterator = unsigned char (*)[256]; _ForwardIterator = unsigned char (*)[256]; _Allocator = std::allocator<unsigned char [256]>]’
+/usr/include/c++/7/bits/vector.tcc:426:6:   required from ‘void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const unsigned char (&)[256]}; _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::iterator = __gnu_cxx::__normal_iterator<unsigned char (*)[256], std::vector<unsigned char [256]> >; typename std::_Vector_base<_Tp, _Alloc>::pointer = unsigned char (*)[256]]’
+/usr/include/c++/7/bits/stl_vector.h:948:21:   required from ‘void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = unsigned char [256]; _Alloc = std::allocator<unsigned char [256]>; std::vector<_Tp, _Alloc>::value_type = unsigned char [256]]’
+../src/test_server.cpp:244:53:   required from here
+/usr/include/c++/7/bits/stl_construct.h:75:7: error: parenthesized initializer in array new [-fpermissive]
+     { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:24:39 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-Finished building: ../src/test_server.cpp
- 
-Building target: test_server
-Invoking: GCC C++ Linker
-g++  -o "test_server"  ./src/test_server.o   -lpthread
-Finished building target: test_server
- 
-20:22:36 **** Incremental Build of configuration Debug for project test_server ****
+../src/test_server.cpp: In function ‘void* newConnection(void*)’:
+../src/test_server.cpp:236:42: error: incompatible types in assignment of ‘unsigned char*’ to ‘uint8_t [256] {aka unsigned char [256]}’
+    else ans=(*params->cl->answer->begin());
+                                          ^
+src/subdir.mk:18: recipe for target 'src/test_server.o' failed
+make: *** [src/test_server.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+21:28:37 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-../src/test_server.cpp: In function ‘void* t_accept(void*)’:
-../src/test_server.cpp:157:33: error: no matching function for call to ‘ac_params::ac_params(void*&)’
-  ac_params params = (ac_params) _params;
-                                 ^~~~~~~
-../src/test_server.cpp:149:8: note: candidate: ac_params::ac_params()
- struct ac_params
-        ^~~~~~~~~
-../src/test_server.cpp:149:8: note:   candidate expects 0 arguments, 1 provided
-../src/test_server.cpp:149:8: note: candidate: constexpr ac_params::ac_params(const ac_params&)
-../src/test_server.cpp:149:8: note:   no known conversion for argument 1 from ‘void*’ to ‘const ac_params&’
-../src/test_server.cpp:149:8: note: candidate: constexpr ac_params::ac_params(ac_params&&)
-../src/test_server.cpp:149:8: note:   no known conversion for argument 1 from ‘void*’ to ‘ac_params&&’
+../src/test_server.cpp: In function ‘void* newConnection(void*)’:
+../src/test_server.cpp:241:44: error: invalid array assignment
+    else ans=(*params->cl->answer->begin()).array;
+                                            ^~~~~
+../src/test_server.cpp:250:26: error: invalid array assignment
+      s.array=params->cl->response;
+                          ^~~~~~~~
 make: *** [src/test_server.o] Error 1
 src/subdir.mk:18: recipe for target 'src/test_server.o' failed
 "make all" terminated with exit code 2. Build might be incomplete.
-20:22:53 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-Building file: ../src/test_server.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
-../src/test_server.cpp: In function ‘void* t_accept(void*)’:
-../src/test_server.cpp:157:34: error: ‘void*’ is not a pointer-to-object type
-  ac_params params = (ac_params)* _params;
-                                  ^~~~~~~
-src/subdir.mk:18: recipe for target 'src/test_server.o' failed
-make: *** [src/test_server.o] Error 1
-"make all" terminated with exit code 2. Build might be incomplete.
-21:39:08 **** Incremental Build of configuration Debug for project test_server ****
+21:33:40 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -269,10 +405,7 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-21:39:16 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-make: Nothing to be done for 'all'.
-21:48:16 **** Incremental Build of configuration Debug for project test_server ****
+22:03:28 **** Incremental Build of configuration Debug for project test_server ****
 make all 
 Building file: ../src/test_server.cpp
 Invoking: GCC C++ Compiler
@@ -284,9 +417,15 @@ Invoking: GCC C++ Linker
 g++  -o "test_server"  ./src/test_server.o   -lpthread
 Finished building target: test_server
  
-20:54:36 **** Incremental Build of configuration Debug for project test_server ****
+22:05:35 **** Incremental Build of configuration Debug for project test_server ****
 make all 
-make: Nothing to be done for 'all'.
-21:11:42 **** Incremental Build of configuration Debug for project test_server ****
-make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/test_server.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test_server.d" -MT"src/test_server.o" -o "src/test_server.o" "../src/test_server.cpp"
+Finished building: ../src/test_server.cpp
+ 
+Building target: test_server
+Invoking: GCC C++ Linker
+g++  -o "test_server"  ./src/test_server.o   -lpthread
+Finished building target: test_server
+ 

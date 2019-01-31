@@ -14,6 +14,8 @@
 #define CONNECTION_CLOSED 7
 #define SHUTDOWN_SERVER 8
 
+#define IP "10.0.0.13"
+
 using namespace std;
 
 int main() {
@@ -29,8 +31,8 @@ int main() {
 	}
 
 	addr.sin_family = AF_INET;
-	addr.sin_port = htons(25564);
-	addr.sin_addr.s_addr = inet_addr("192.168.1.106");
+	addr.sin_port = htons(1132);
+	addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
 	if(connect(sock,(struct sockaddr *)&addr,sizeof(addr))<0)
 	{
@@ -45,7 +47,7 @@ int main() {
 	response[0] = 1;
 	response[1] = 2;
 
-	send(sock,response,sizeof(response),0);
+	send(sock,response,2,0);
 	recv(sock,answer,sizeof(answer),0);
 	if(answer[0]==2)cout<<"Answer: connection successful"<<endl;
 	else cout<<"Answer: "<<(int)answer[0]<<endl;
